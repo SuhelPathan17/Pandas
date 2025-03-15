@@ -147,3 +147,57 @@ func : callable, string, dictionary, or list of string/callables. Function to us
 axis : (default 0) {0 or ‘index’, 1 or ‘columns’} 0 or ‘index’: apply function to each column. 1 or ‘columns’: apply function to each row.  
 
 Returns: Aggregated DataFrame
+
+------------------------------------------------------------
+
+Pandas GroupBy
+
+Groupby is a fundamental and powerful data analysis technique in data analysis . It allows you to group categories and apply functions to them efficiently, making it essential for handling large datasets. Its ability to aggregate data with minimal code and high performance makes it invaluable for real-world projects.
+
+Groupby mainly refers to a process involving one or more of the following steps they are: 
+
+Splitting : It is a process in which we split data into group by applying some conditions on datasets.
+Applying : It is a process in which we apply a function to each group independently
+Combining : It is a process in which we combine different datasets after applying groupby and results into a data structure
+
+------------------------------------------------------------
+
+Pandas Read CSV in Python
+
+Syntax: pd.read_csv(filepath_or_buffer, sep=’ ,’ , header=’infer’,  index_col=None, usecols=None, engine=None, skiprows=None, nrows=None) 
+
+
+Parameters: 
+
+
+filepath_or_buffer: Location of the csv file. It accepts any string path or URL of the file.
+sep: It stands for separator, default is ‘, ‘.
+header: It accepts int, a list of int, row numbers to use as the column names, and the start of the data. If no names are passed, i.e., header=None, then, it will display the first column as 0, the second as 1, and so on.
+usecols: Retrieves only selected columns from the CSV file.
+nrows: Number of rows to be displayed from the dataset.
+index_col: If None, there are no index numbers displayed along with records.  
+skiprows: Skips passed rows in the new data frame.
+
+
+-----------------------------------------------------------
+
+Loading Excel spreadsheet as pandas DataFrame
+
+# Import the excel file and call it xls_file 
+excel_file = pd.ExcelFile('pandasEx.xlsx') 
+  
+# View the excel_file's sheet names 
+print(excel_file.sheet_names) 
+  
+# Load the excel_file's Sheet1 as a dataframe 
+df = excel_file.parse('Sheet1') 
+print(df) 
+
+--
+
+require_cols = [0, 3]  
+    
+# only read specific columns from an excel file  
+required_df = pd.read_excel('SampleWork2.xlsx', usecols = require_cols)  
+    
+print(required_df)  
